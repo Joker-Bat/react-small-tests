@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 // Components
 import App from "./App";
 import Rating from "./components/Rating/Rating";
+import Searchbar from "./components/Searchbar/App";
 
 // React Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,6 +16,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route path="/rating" component={Rating} />
+        <Route path="/searchbar" component={Searchbar} />
         <Route path="/" component={App} />
       </Switch>
     </Router>

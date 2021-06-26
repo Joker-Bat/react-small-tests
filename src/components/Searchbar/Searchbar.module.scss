@@ -1,0 +1,75 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(90deg, #410076, #8820dd);
+}
+
+.Search {
+  margin: 3rem 0;
+  align-self: flex-start;
+}
+
+.SearchInputs {
+  display: flex;
+
+  input {
+    border: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .SearchIcon {
+    background-color: #fff;
+    display: grid;
+    place-items: center;
+    padding: 0.5rem;
+    border-radius: 0 4px 4px 0;
+
+    svg {
+      transform: scale(1.3);
+    }
+  }
+}
+
+.DataResult {
+  margin-top: 5px;
+  width: 300px;
+  max-height: 200px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .DataItem {
+    text-decoration: none;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #000;
+
+    &.Active {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      margin-left: 10px;
+    }
+  }
+}
+
+#clearBtn {
+  cursor: pointer;
+}

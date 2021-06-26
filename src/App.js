@@ -8,6 +8,7 @@ function App() {
   return (
     <main className={classes.Container}>
       <Link to="/rating">Rating</Link>
+      <Link to="/searchbar">Searchbar</Link>
     </main>
   );
 }
