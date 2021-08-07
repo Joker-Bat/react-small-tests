@@ -13,10 +13,10 @@ const Searchbar = ({ placeholder, data }) => {
   const [searchWord, setSearchWord] = useState("");
   const [cursor, setCursor] = useState(0);
 
-  const handleFilter = (event) => {
+  const handleFilter = event => {
     const currentWord = event.target.value;
     setSearchWord(currentWord);
-    const newFilter = data.filter((item) => {
+    const newFilter = data.filter(item => {
       return item.name.toLowerCase().includes(currentWord.toLowerCase());
     });
 
@@ -27,7 +27,7 @@ const Searchbar = ({ placeholder, data }) => {
   const showSuggestion = () => setIsVisible(true);
   const hideSuggestion = () => setIsVisible(false);
 
-  const handleOutsideClick = (e) => {
+  const handleOutsideClick = e => {
     if (
       searchContainer.current &&
       !searchContainer.current.contains(e.target)
@@ -36,14 +36,14 @@ const Searchbar = ({ placeholder, data }) => {
     }
   };
 
-  const keyboardNavigation = (e) => {
+  const keyboardNavigation = e => {
     if (e.key === "ArrowDown") {
       isVisble
-        ? setCursor((c) => (c < filteredProducts.length - 1 ? c + 1 : c))
+        ? setCursor(c => (c < filteredProducts.length - 1 ? c + 1 : c))
         : showSuggestion();
     }
     if (e.key === "ArrowUp") {
-      setCursor((c) => (c > 0 ? c - 1 : 0));
+      setCursor(c => (c > 0 ? c - 1 : 0));
     }
     if (e.key === "Escape") {
       hideSuggestion();
@@ -61,20 +61,21 @@ const Searchbar = ({ placeholder, data }) => {
     return () => {
       window.removeEventListener("mousedown", handleOutsideClick);
     };
+    //eslint-disable-next-line
   }, []);
 
   return (
     <div className={classes.Search} ref={searchContainer}>
       <div className={classes.SearchInputs}>
         <input
-          type="search"
-          name="name"
+          type='search'
+          name='name'
           placeholder={placeholder}
           value={searchWord}
-          autoComplete="off"
+          autoComplete='off'
           onClick={showSuggestion}
           onChange={handleFilter}
-          onKeyDown={(e) => keyboardNavigation(e)}
+          onKeyDown={e => keyboardNavigation(e)}
         />
         <div className={classes.SearchIcon}>
           {filteredProducts.length === 0 ? <SearchIcon /> : <CloseIcon />}
@@ -90,18 +91,19 @@ const Searchbar = ({ placeholder, data }) => {
               ];
               return (
                 <a
+                  href='##'
                   key={key}
-                  target="_blank"
+                  target='_blank'
                   data-id={value.slug}
                   className={highightClass.join(" ")}
-                  onClick={(e) => console.log(e.target.closest("a").dataset.id)}
+                  onClick={e => console.log(e.target.closest("a").dataset.id)}
                 >
                   <p>{value.name}</p>
                 </a>
               );
             })
           ) : (
-            <p href="#" className={classes.DataItem}>
+            <p href='#' className={classes.DataItem}>
               {searchWord === ""
                 ? "Search some product"
                 : "No matched products!"}

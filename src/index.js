@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import Rating from "./components/Rating/Rating";
 import Searchbar from "./components/Searchbar/App";
+import UserPagination from "./components/UserPagination/UserPagination";
 
 // React Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,9 +16,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route path="/rating" component={Rating} />
-        <Route path="/searchbar" component={Searchbar} />
-        <Route path="/" component={App} />
+        <Route path='/rating' component={Rating} />
+        <Route path='/searchbar' component={Searchbar} />
+        <Route path='/user-pagination' component={UserPagination} />
+        <Route path='/' component={App} />
       </Switch>
     </Router>
   </React.StrictMode>,

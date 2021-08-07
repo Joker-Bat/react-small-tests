@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 function App() {
   return (
     <main className={classes.Container}>
-      <Link to="/rating">Rating</Link>
-      <Link to="/searchbar">Searchbar</Link>
+      <Link to='/rating'>Rating</Link>
+      <Link to='/searchbar'>Searchbar</Link>
+      <Link to='/user-pagination'>User Pagination</Link>
     </main>
   );
 }
